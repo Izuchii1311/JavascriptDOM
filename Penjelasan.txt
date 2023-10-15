@@ -1,0 +1,211 @@
+Javascript.
+
+Ctrl + Alt + J = Shortcut Open Console di Web Browser;
+
+
+Tipe data Javascript :
+- Number
+    Tidak ada int di dalam js, hanya ada floating point (number).
+    Jika menggunakan number diawali dengan 0 maka 022 akan menjadi 18. Karena bilangan akan dianggap sebagai bilangan oktal. Dan juga 0xFF akan dianggap sebagai bilangan hexa 255.
+        Angka Special :
+            Infinity
+            -Infinity
+            NaN (Not a Number)
+
+        *sebuah bilangan dibagi dangan string angka maka string akan di proses sebagai angka.
+
+
+        Operator :
+            aritmatika      ( +, -, *, /, % )
+            penugasan       ( =, +=, -=, *=, /=, %= )
+            perbandingan    ( ==, !=, ===, !==, >, <, >=, <= )
+            logika          ( && and "keduanya harus true", || or "salah satunya benar", ! not )
+            string          ( + )
+                            10 + 10 + "10" = "2010"
+                            "10" + 10 + 10 = "101010"
+            kondisional     ( (kondisi) ? true : false )
+            typeof          ( typeof(operand) )
+                            *memeriksa tipe data dari sebuah nilai.
+
+    Unary = memerlukan 1 operand.
+    Binary = memerlukan 2 operand.
+    Ternary = memerlukan 3 operand.
+
+- String ( " ", ' ' )
+    escape charachter \" atau \'
+    concatenation   +
+    membandingkan 2 buah string ==, ===
+    .length = menghitung panjang string (spasi akan dihitung juga).
+
+- Boolean ( true atau false )
+    Boolean(nilai)
+
+- Object
+- Function
+- Undefined
+
+
+Undefined   = nilai variabel yang belum diisikan.
+Null        = nilai kosong.
+
+Variabel
+    deklarasi = mendaftarkan variabel kedalam lingkup yang sesuai. ( var, let, const )
+    inisialisasi = menyediakan memori untuk variabel.
+    assignment = untuk menetapkan nilai untuk variabel
+
+    var x;          // deklarasi & inisialisasi
+    x = 20;         // deklarasi, inisialisasi, & assignment.
+
+    console.log()   = digunakan untuk menuliskan sesuatu ke dalam console.
+
+
+Pop Up Box
+    alert("Hello World");
+    prompt("Siapa Nama Anda : ");           // mengembalikan nilai inputan
+    confirm("Are you sure?");               // mengembalikan true or false.
+
+Controll Flow
+    Pengulangan (Looping) = mengeksekusi statement secara berulang.
+        for
+        while
+        do while
+
+    Pengkondisian = sebuah keadaan dimana program bisa memilih statement yang berbeda berdasarkan kondisi yang diberikan.
+        if
+        if else
+        if else if else
+        switch
+
+
+Function, kunci utama pada js yang membuatnya menjadi powerfull.
+    > program yang ada di dalam program lainnya, yang dapat dipanggil.
+    > Fundamental building bloks javascript.
+    > Kumpulan statement untuk melakukan tugas.
+
+    kategori function :
+    > built-in Function (bawaan javascript)
+    > User-Definded Function (yang dibuat oleh user)
+        + Function Deklaration
+            function jumlah(a, b) {
+                ...
+            }
+
+        + Function Expression
+            var jumlah = function(a, b) {
+                ...
+            }
+
+            - harus didefinisikan terlebih dahulu.
+            - sebagai closure
+            - sebagai argument untuk function lain.
+
+        *run function
+            ex : alert(jumlah(2, 5));
+
+    *parameter variabel di dalam kurung function, argument nilai yang dikirimkan ke parameter.
+    *jika parameter > banyak dari argument (undefined), tapi jika argument > parameter maka (diabaikan).
+        return arguments = mengembalikan array dari argument yang dimasukkan/
+    *return mengembalikan nilai & merupakan cara memberhentikan function.
+
+
+Refactoring, mengubah code menjadi lebih baik tanpa merubah functional code.
+
+
+Scope (Ruang lingkup).
+    > Block Scope
+    > Function Scope
+        "use strict";           // membersihkan variabel local yang menjadi variabel global. misalkan a = 20 di dalam function.
+
+
+Rekursif, sebuah fungsi yang memanggil dirinya sendiri.
+    BaseCase, kondisi akhir rekursif yang menghasilkan nilai.
+    Faktorial.
+
+
+Array, tipe data yang digunakan untuk mendeskripsikan kumpulan element (key & value).
+    - Bisa menampung lebih dari 1 nilai.
+    - variabel yang lebih sakti.
+    - key adalah index yang dimulai dari 0.
+    - array berupa tipe-nya object
+
+    Manipulate Array
+        + add element array
+        + delete element array
+        + show all element array
+
+        Array Method
+            > length    = menghitung jumlah.
+            > join      = menggabungkan seluruh isi array, dan mengubahnya menjadi string.
+            > push      = menambah element baru array diakhir.
+            > pop       = menghilangkan element terakhir dari sebuah array.
+            > shift     = menghilangkan element pertama dari sebuah array.
+            > unshift   = menambah element baru array diawal.
+            > slice     = mengambil beberapa bagian untuk membuat array baru.
+                          slice(index awal - akan terbawa, index akhir)
+            > splice    = menyisipkan sebuah element di tengah tengah.
+                          splice(index awal, mauDihapusBerapa, elementbaru1, elementabaru2)
+            > foreach   = mengembalikan element array secara keseluruhan.
+            > map       = map mengembalikan nilai array.
+            > sort      = mengurutkan isi array.
+                          *tapi cukup unik jika mengurutkan angka 10 keatas harus dengan function berikut.
+                            angka.sort(function(a, b) {
+                                return a - b;
+                            });
+            > filter    = mencari dengan mengembalikan banyak nilai (array).
+            > find      = mencari dengan mengembalikan 1 nilai.
+
+
+Object, kumpulan nilai yang memiliki nama.
+    - array yang lebih sakti.
+    - jika array menggunakan [ ... ], object menggunakan { ... }.
+    - bisa kita beri nama juga, dan menyimpan function di dalamnya.
+    - variabel yang berada di dalam object 'property'.
+    - function yang berada di dalam object 'method'.
+
+        ex  : var mhs = {};
+              mhs.nama = "Luthfi";
+              console.log(mhs.nama);
+
+        Membuat object
+            + secara literal atau biasa.
+            + menggunakan function declaration.
+                - buat variabel untuk menerima object (objec kosong).
+                - return variabel tersebut
+            + menggunakan constructor function.
+                - khusus untuk membuat object
+                - agar sama dengan bahasa lain dan membedakannya biasanya diawali dengan huruf besar.
+                - tidak memerlukan variabel kosong & return cukup dengan this
+                - saat pemanggilan gunakan var mhs = new Mahasiswa();
+
+                    this, sebuah keyword spesial yang secara otomatis itu didefinisikan pada setiap function.
+                        *setiap membuat object dengan cara apapun ada this yang didefinisikan.
+
+                        jika di dalam object literal this mengembalikan object yang bersangkutan.
+                        jika di dalam function declaration this mengembalikan object global (window).
+                        jika di dalam constructor function this mengembalikan object yang baru dibuat
+                            (object yang baru dibuat yang diawali dengan keyword 'new').
+
+            + object.create().
+
+
+
+
+
+Javascript DOM (Document Object Model).
+
+DOM (Document Object Model), Representasi element HTML pada dokumen menjadi sebuah Object.
+    console.log(document);
+
+    DOM tree, setiap attribute html di sebut node / simpul.
+
+        window (bisa mengelola seperti scroll, ukuran webnya, dl)
+            > document (mengelola element html)
+            > history
+            > location
+
+
+DOM Selection
+DOM Manipulation
+DOM Traversal
+Event Handling
+Studi Kasus
