@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript DOM</title>
+    <title>DOM Selection</title>
+    <style>
+        * {
+            border: 2px solid red;
+            padding: 15px;
+            margin: 15px;
+        }
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            max-width: 600px;
+            margin: 20px auto;
+            font-family: sans-serif;
+            color: #333;
+        }
+        .biru-muda {background: lightblue;}
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+        <section id="a">
+            <p class="p1">Paragraf 1</p>
+            <a href="www.facebook.com/Izuchii1311">Instagram Luthfi Nur Ramadhan</a>
+            <p class="p2">Paragraf 2</p>
+            <p class="p3">Paragraf 3</p>
+        </section>
+        <section id="b">
+            <p>Paragraf 4</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </section>
 
-    <p>Paragraf 1</p>
-    <p>Paragraf 2</p>
+    </div>
 
-    <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-    </ul>
-
-    <script src="script.js"></script>
+    <script src="events.js"></script>
 </body>
 </html>
