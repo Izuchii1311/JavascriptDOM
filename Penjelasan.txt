@@ -236,7 +236,10 @@ DOM Selection
     > getElementsByClassName()  = memilih element yang memiliki class tertentu (boleh lebih dari satu).
     > querySelector()           = mencari element berdasarkan selector.
         *bisa dianggap dengan mencari selector di css.
+        *menangkap 1 selector yang pertama dia temui
         misalkan : querySelector('#header h1');
+        Contoh menangkap element tanpa ada selectornya
+            const sMerah = document.querySelector('input[name=sMerah]');
     > querySelectorAll()        = memilih semua element berdasar selector.
 
     > getElementById()          = Element
@@ -290,7 +293,7 @@ DOM Manipulation
     DOM Events, sebuah kejadian yang nantinya akan terjadi di dalam DOM, misalkan ketika di klik dll.
         Events != even
 
-        > Event Handler (Cara Lama)
+        > Event Handler (Cara Lama) - onclick
             - Inline HTML Attribute     (Akan mencampur aduk html & js, dengan menaruhnya di html langsung)
             - Element Method
         > addEventListener()
@@ -303,8 +306,47 @@ DOM Manipulation
                     contoh : mouse event (click, dblclick, mouseover, mouseenter, mouseup, wheel).
 
 
-EPS 8
+    *after() akan menampilkan / menambahkan data atau element setelahnya.
+        misal di latihan.js : tUbahWarna.after(tombol);
+        *maka akan menyimpan tombol setelah tUbahWarna
 
-DOM Traversal
-Event Handling
-Studi Kasus
+        fungsi pembulatan js / untuk menghilangkan angka koma setelah random number
+            round   = pembulatan ke angka terdekat
+            floor   = pembulatan kebawah
+            ceil    = pembulatan ke atas
+
+            window.innerWidth   = untuk mengetahui ukuran document.
+
+DOM Traversal (Penelusuran DOM)
+    menelusuri elementnya berdasarkan element yang diseleksi di awal.
+    menelusuri siapa parentnya dengan menggunakan parentElement
+
+    DOM Traversal method
+        > parentNode                    -> node
+        > parentElement                 -> element
+        > nextSibling                   -> node
+        > nextElementSibling            -> element
+        > previousSibling               -> node
+        > previousElementSibling        -> element
+            *node bisa saja mengambil enter
+
+    Prevent Default
+        adalah sebuah method yang ada di dalam sebuah object. misalkan function(e){...}
+        object yang dimaksud adalah e, dengan tujuannya adalah untuk menghentikan aksi default yang dilakukan oleh element.
+
+        Misalnya kita membuat tombol close
+            <!-- <span class="close">×</span> -->
+            <a href="" class="close">×</a>
+
+            *kita ubah dengan menggunakan a.
+            karena dengan menggunakan a maka akan memindahkan ke halaman lain, maka akan berkedip(refresh halaman).
+            maka dengan kita menuliskan misalkan.
+            e.preventDefault();
+                maka aksi a ketika di klik, tidak akan berkedip atau merefresh halamannya.
+
+
+    Event Bubling
+        dalam kasus traversal, kita sudah memberikan class close, dan kita sudah memberikan event pada sebuah element. Maka event tersebut akan berlaku untuk element element pembungkusnya juga. Dan akan berlaku juga untuk event pembungkusnya juga.
+        Event Bubling ini juga sangat terpakai untuk menangani kasus yang dinamis / menambahkan element secara inspect. Karena jika kita menggunakan selectorAll maka berbentuk node dan jumlahnya pasti sama dengan jumlah awalnya.
+
+        Maka oleh begitu event bubling akan menangkap element pembungkus terluarnya, lalu ketika di klik jalankan fungsi yang mengecek jika ada className dengan nama ... maka lakukan sesuatu.
